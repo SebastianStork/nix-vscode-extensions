@@ -17,11 +17,10 @@
     inputs@{
       self,
       nixpkgs,
-      nix-dev,
       ...
     }:
     let
-      nix-dev = import nix-dev.outPath;
+      nix-dev = import inputs.nix-dev.outPath;
       inputsCombined = nix-dev.inputs // inputs;
 
       systemPlatform = {
